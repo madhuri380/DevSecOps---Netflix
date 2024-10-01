@@ -14,13 +14,6 @@
   <p align="center">Home Page</p>
 </div>
 
-Click on the import button:
-
-![Alt text](https://github.com/madhuri380/DevSecOps---Netflix/blob/main/output/Screenshot%202024-10-01%20at%201.00.18%E2%80%AFAM.png?raw=true "EKS")
-
-
-![Alt text](https://github.com/madhuri380/DevSecOps---Netflix/blob/main/output/Screenshot%202024-10-01%20at%201.03.52%E2%80%AFAM.png?raw=true "Sonarqube")
-
 # Deploy Netflix Clone on Cloud using Jenkins - DevSecOps Project!
 
 ### **Phase 1: Initial Setup and Deployment**
@@ -80,6 +73,9 @@ Now recreate the Docker image with your api key:
 ```
 docker build --build-arg TMDB_V3_API_KEY=<your-api-key> -t netflix .
 ```
+![Alt text](https://github.com/madhuri380/DevSecOps---Netflix/blob/main/output/Screenshot%202024-10-01%20at%201.00.18%E2%80%AFAM.png?raw=true "ec2")
+
+![Alt text](https://github.com/madhuri380/DevSecOps---Netflix/blob/main/output/Screenshot%202024-10-01%20at%201.06.41%E2%80%AFAM.png?raw=true "Netflix")
 
 **Phase 2: Security**
 
@@ -179,6 +175,10 @@ Click on Apply and Save
 **Global Tool Configuration** is used to configure different tools that we install using Plugins
 
 We will install a sonar scanner in the tools.
+
+![Alt text](https://github.com/madhuri380/DevSecOps---Netflix/blob/main/output/Screenshot%202024-10-01%20at%201.03.52%E2%80%AFAM.png?raw=true "Sonarqube")
+
+![Alt text](https://github.com/madhuri380/DevSecOps---Netflix/blob/main/output/Screenshot%202024-10-01%20at%2012.59.06%E2%80%AFAM.png?raw=true "trivy")
 
 Create a Jenkins webhook
 
@@ -358,8 +358,8 @@ sudo su
 sudo usermod -aG docker jenkins
 sudo systemctl restart jenkins
 
-
 ```
+![Alt text](https://github.com/madhuri380/DevSecOps---Netflix/blob/main/output/Screenshot%202024-10-01%20at%201.05.21%E2%80%AFAM.png?raw=true "jenkins")
 
 **Phase 4: Monitoring**
 
@@ -559,6 +559,7 @@ sudo systemctl restart jenkins
 
    `http://<your-prometheus-ip>:9090/targets`
 
+![Alt text](https://github.com/madhuri380/DevSecOps---Netflix/blob/main/output/Screenshot%202024-10-01%20at%2012.54.49%E2%80%AFAM.png?raw=true "Prometheus")
 
 ####Grafana
 
@@ -672,6 +673,8 @@ Grafana is a powerful tool for creating visualizations and dashboards, and you c
 
 That's it! You've successfully installed and set up Grafana to work with Prometheus for monitoring and visualization.
 
+![Alt text](https://github.com/madhuri380/DevSecOps---Netflix/blob/main/output/Screenshot%202024-10-01%20at%2012.56.58%E2%80%AFAM.png?raw=true "Grafana")
+
 2. **Configure Prometheus Plugin Integration:**
     - Integrate Jenkins with Prometheus to monitor the CI/CD pipeline.
 
@@ -694,6 +697,9 @@ Prometheus is a powerful monitoring and alerting toolkit, and you'll use it to m
 ### Install Node Exporter using Helm
 
 To begin monitoring your Kubernetes cluster, you'll install the Prometheus Node Exporter. This component allows you to collect system-level metrics from your cluster nodes. Here are the steps to install the Node Exporter using Helm:
+
+
+![Alt text](https://github.com/madhuri380/DevSecOps---Netflix/blob/main/output/Screenshot%202024-10-01%20at%201.01.59%E2%80%AFAM.png?raw=true "AWS-EKS")
 
 1. Add the Prometheus Community Helm repository:
 
@@ -747,9 +753,15 @@ To deploy an application with ArgoCD, you can follow these steps, which I'll out
    - `project`: Specify the project the application belongs to.
    - `source`: Set the source of your application, including the GitHub repository URL, revision, and the path to the application within the repository.
    - `syncPolicy`: Configure the sync policy, including automatic syncing, pruning, and self-healing.
+     
+![Alt text](https://github.com/madhuri380/DevSecOps---Netflix/blob/main/output/Screenshot%202024-10-01%20at%2012.58.40%E2%80%AFAM.png?raw=true "argocd")
+
+![Alt text](https://github.com/madhuri380/DevSecOps---Netflix/blob/main/output/Screenshot%202024-10-01%20at%2012.58.03%E2%80%AFAM.png?raw=true "argocd-events")
+  
 
 4. **Access your Application**
    - To Access the app make sure port 30007 is open in your security group and then open a new tab paste your NodeIP:30007, your app should be running.
+![Alt text](https://github.com/madhuri380/DevSecOps---Netflix/blob/main/output/Screenshot%202024-10-01%20at%2012.58.55%E2%80%AFAM.png?raw=true "Netflixwithsecurity")
 
 **Phase 7: Cleanup**
 
