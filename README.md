@@ -16,7 +16,7 @@
 
 Click on the import button:
 
-![Alt text](output/Screenshot 2024-10-01 at 1.01.59 AM.png?raw=true "EKS")
+![Alt text](https://github.com/madhuri380/DevSecOps---Netflix/blob/main/output/Screenshot%202024-10-01%20at%201.00.18%E2%80%AFAM.png?raw=true "EKS")
 
 # Deploy Netflix Clone on Cloud using Jenkins - DevSecOps Project!
 
